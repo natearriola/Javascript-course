@@ -16,13 +16,6 @@ GAME RULES:
 
 
 */
-
-// Variable for the activePlayer which one is currently playing
-
-var scores, roundscore, activePlayer, gamePlaying;
-
-init();
-
 // WHAT ARE EVENTS?
 // Events alert the code that something is happening
 // Event listeners are only called if a specific rule is executed.
@@ -30,6 +23,12 @@ init();
 
 // CALL BACK FUNCTION = function pass into another function, EX: addEventListner calls dice
 //Anonymous function doesnt have a name cant be reused
+
+// Variable for the activePlayer which one is currently playing
+
+var scores, roundscore, activePlayer, gamePlaying;
+
+init();
 
 // Button to roll the dice
 
