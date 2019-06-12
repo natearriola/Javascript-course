@@ -472,6 +472,7 @@ console.log(fullJapan);
 
 
 /// No other code will override with an IIFE
+/*
 (
     function(){
         function Questions(question, answer, correct, score){
@@ -534,23 +535,149 @@ console.log(fullJapan);
       }
      
       nextQuestion();
-    
-   
-   
-
-      
-
-      
-
-
-  
-        
         
         
     })
 ();
+*/
 
+/********
+ * CODING CHALLENGE 2
+ */
+/*
+  var johnScore =[89, 120, 103];
+  var mikeScore =[116, 94, 123];
+  function sum(total,num){
+      return total + num;
+  }
+
+  var johnSum = johnScore.reduce(sum)
+  var mikeSum = mikeScore.reduce(sum)
   
+  var averageJohn = johnSum / johnScore.length;
+  var averageMike = mikeSum / mikeScore.length;
+  
+  console.log(averageJohn);
+  console.log(averageJohn);
+
+
+
+*/
+
+
+/********
+ * CODING CHALLENGE 3
+ */
+
+
+
+    
+/*
+
+
+
+ function tipCalculator(bill){
+    var tipBills;
+if(bill < 50){
+    tipBills = bill * (20/100);
+    return tipBills;
+} else if ( bill >= 50 && bill <= 200){
+    tipBills = bill * (15/100);
+    return Math.floor(tipBills);
+} else {
+    tipBills = bill * (10/100);
+    return tipBills;
+}
+}
+
+
+
+var bills =[ 124, 48, 268];
+
+
+
+var allTips = [tipCalculator(bills[0]), tipCalculator(bills[1]), tipCalculator(bills[2])];
+
+var finalCost =[allTips[0] + bills[0], allTips[1] + bills[1], allTips[2] + bills[2]];
+
+
+console.log(allTips);
+console.log(finalCost);
+
+
+*/
+
+/************
+ * Objects and Methods
+ */
+
+/*
+ var Person = function(name, height, mass){
+     this.name = name;
+     this.height = height;
+     this.mass = mass;
+ }
+
+
+ Person.prototype.calcBMI = function(){
+   this.BMI = this.mass / this.height ** 2;
+ }
+
+ var john = new Person ('John', 1.73, 89);
+ var mark = new Person ('Mark', 2, 65);
+ 
+function compare(){
+    if( john.calcBMI() > mark.calcBMI()){
+        console.log( john.name + ' has a higher score of ' + john.BMI + '.' );
+    } else if(john.BMI === mark.BMI){
+        console.log( john.name + mark.name + ' have tied with ' + john.BMI + '.' );
+    }
+    else {
+        console.log( mark.name + ' has a lower score of ' + mark.BMI + '.');
+    }
+}
+compare();    
+
+*/
+
+var bills = {
+    bills: [124,48,268,180],
+   name: 'John';
+    tipCalculator: function(bill){
+        if(bill < 50){
+            return bill * (20/100);
+        } else if ( bill >= 50 && bill <= 200){
+          return Math.floor(bill * (15/100));
+            
+        } else {
+            return bill * (10/100);
+          
+        }
+
+    }
+   for (var i= 0; )
+}; 
+
+
+
+
+
+var tipPrice = [bills.tipCalculator(bills.b1), bills.tipCalculator(bills.b2) , bills.tipCalculator(bills.b3), bills.tipCalculator(bills.b4)];
+
+var finalPrice = [tipPrice[0] + bills.b1 , tipPrice[1]+ bills.b2 , tipPrice[2] + bills.b3 , tipPrice[3]+ bills.b4 ];
+
+
+console.log(tipPrice);
+console.log(finalPrice);
+
+
+
+
+
+
+
+
+
 
 
 
