@@ -101,7 +101,7 @@ var nateFit = new outfit('Black Nike top', 'Black Dickes + a belt', 'White airfo
 console.log(nateFit.brand);
 
 */
-
+/*
 // Object.create
 var personProto = {
   calculateAge: function() {
@@ -166,11 +166,12 @@ change(age, obj);
 
 console.log(age);
 console.log(obj.city);
-
+*/
 // First class functions: Passings functions as agruments
 //Functions are also objects in Javascript
 //Function is an instance of the object type
 //fn = function and arr = array
+/*
 var years = [1990, 1965, 1937, 2005, 1998];
 //GENERIC FUNCTION
 function arrayCalc(arr, fn) {
@@ -324,7 +325,7 @@ retirement(66)(1990);
 //gives same result as above works left to right //
 */
 // Challenge change the interview questions using closures
-
+/*
 function interviewQuestions(job) {
   var a = " can you please explain what Ux design is?";
   var b = " what subject do you teach";
@@ -346,7 +347,7 @@ designerAns("Nate");
 teacherAns("jane");
 
 interviewQuestions("engineer")("Niko");
-
+*/
 /*
 function interviewQuestions(job) {
     if (job === "designer") {
@@ -373,3 +374,220 @@ function interviewQuestions(job) {
   
   var otherQuestion = interviewQuestions("Engineer");
   */
+
+
+
+  //////////////////////////////
+  // Lecture: Bind, Call and Apply
+  
+/*
+  var john = {
+      name: 'john',
+      age: 26,
+      job:'teacher',
+      presentation: function(style, timeOfDay) {
+          if (style === 'formal'){
+              console.log( 'Good ' + timeOfDay + ', ladies and gentle man I\'m ' + this.name + this.job + ' and I\'m ' + this.age + ' years old');
+          } else if (style === 'friendly') {
+console.log('Hey! What\'s up? I\'m ' + this.name + ' a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.' );
+          }
+      }
+  }
+
+
+  var emily = {
+      name: 'emily',
+      age: 35,
+      job: 'designer'
+  };
+*/
+
+/*
+  john.presentation('formal', 'morning');
+  //Call method, this changes the this. variable from john to emily
+  // This allows us to use johns mehthod on emily. 
+  john.presentation.call(emily, 'friendly', 'afternoon');
+
+
+
+//Bind method doesnt immediately call the function, but produces a copy of a function to store it somewhere 
+// USEFUL FOR PRESET ARGUMENTS 
+
+//BIND METHOD WITH PRESET ARGUMENTS 
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning');
+johnFriendly('night');
+
+var emilyFormal = john.presentation.bind(emily, 'formal');
+
+emilyFormal('afternoon');
+*/
+  //Apply method is very similar to the Call method, 
+  //only difference is accepts the this. argument as an array 
+/*
+  john.presentation.apply(emily, ['friendly', 'afternoon']);
+  */
+
+/*
+ var years = [1990, 1965, 1937, 2005, 1998];
+ //GENERIC FUNCTION
+ function arrayCalc(arr, fn) {
+   var arrRes = [];
+   for (var i = 0; i < arr.length; i++) {
+     arrRes.push(fn(arr[i]));
+   }
+   return arrRes;
+ }
+ 
+ function calculateAge(el) {
+   return 2016 - el;
+ }
+ 
+
+ 
+
+ // SHOWS ALL AGES
+ function isFullAge(limit, el) {
+   return el >= limit;
+ }
+
+ var ages = arrayCalc(years, calculateAge);
+
+var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+console.log(ages);
+console.log(fullJapan);
+
+*/
+
+/// CODING CHALLENGE 7 
+// Use a method and use prompt to ask for the correct answer
+//Method 
+
+
+
+
+/// Console.log and choose one at random with questions and answers 
+
+
+/// No other code will override with an IIFE
+(
+    function(){
+        function Questions(question, answer, correct, score){
+            this.question = question;
+            this.answer = answer;
+            this.correct = correct;
+           
+            }
+        
+   
+        Questions.prototype.displayQuestion= function(){
+            console.log(this.question);
+            //loop for all the possible answers 
+            for( var i = 0; i < this.answer.length; i++ )
+            {
+                console.log(i + ":" + this.answer[i]);
+            }
+        }
+        
+        
+        Questions.prototype.checkAnswer = function(answer){
+            if (answer === this.correct){
+               console.log('Congrats you winner!'); 
+              
+            } else {
+                console.log('Sorry..Try again');
+               
+            } 
+            points();
+        }
+
+  
+
+        
+      
+   
+        
+            var q1 = new Questions('What is my name?', 
+              ['Nate' , 'Niko'] , 0);
+            var q2 = new Questions('Favorite color?', 
+            ['blue', 'red', 'yellow','black'], 
+            0);
+            var q3 = new Questions('Favorite Brand?', ['Addidas', 'Nike', 'supreme'], 1);
+           
+           
+       
+            var questions = [q1, q2, q3];
+
+      function nextQuestion(){
+        var n =  Math.floor(Math.random() * questions.length);
+        questions[n].displayQuestion();
+        var answer = prompt('Enter number');
+        questions[n].points();
+        if(answer !== 'exit'){
+            questions[n].checkAnswer(parseInt(answer));
+            nextQuestion();
+           
+            
+        }
+      }
+     
+      nextQuestion();
+    
+   
+   
+
+      
+
+      
+
+
+  
+        
+        
+        
+    })
+();
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
