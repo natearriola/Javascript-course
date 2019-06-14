@@ -639,7 +639,7 @@ function compare(){
 compare();    
 
 */
-
+/*
 var bills = {
     bills: [124,48,268,180],
    name: 'John';
@@ -670,6 +670,70 @@ var finalPrice = [tipPrice[0] + bills.b1 , tipPrice[1]+ bills.b2 , tipPrice[2] +
 console.log(tipPrice);
 console.log(finalPrice);
 
+*/
+
+/****************************
+ * Coding challenge 7 Attempt 2
+ */
+
+ /*
+ var Questions = function(question, answer, correct){
+     this.question = question;
+     this.answer = answer;
+     this.correct = correct;
+ }
+ Questions.prototype.displayQuestion = function(){
+    console.log(this.question);
+    for(var i = 0; i < this.answer.length; i ++){
+        console.log( i + ':' + this.answer[i]);
+    }
+   
+
+   }
+
+   
+Questions.prototype.checkAnswer = function(answer){
+     
+    
+    if(answer === this.correct){
+        console.log('Congrats you winner!');
+        
+    } else {
+        console.log('sorry try again');
+        
+    }
+    nextQuestion(); 
+  
+
+   
+}
+
+
+
+var nikeQuestion = new Questions('What is your crazy dream?', ['nike', 'addidas'], 0);
+var foodQuestion = new Questions('Which food is your favorite?', ['sushi', 'ribs', 'steak','burger'], 2);
+var moodQuestion = new Questions('How are you today? ', ['fine', 'good', 'okay'], 1);
+
+
+
+function nextQuestion(){
+    var allQuestions = [nikeQuestion, foodQuestion, moodQuestion];
+    var n = Math.floor(Math.random() * allQuestions.length);
+   
+   
+   allQuestions[n].displayQuestion();
+   
+   
+   var answer = parseInt(prompt('Please enter ur answer'));
+   
+   allQuestions[n].checkAnswer(answer);
+}
+
+nextQuestion();
+
+
+
+*/
 
 
 
